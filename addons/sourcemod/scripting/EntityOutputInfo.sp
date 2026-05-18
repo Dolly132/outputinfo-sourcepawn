@@ -86,7 +86,7 @@ public Plugin myinfo =
 	name		= "Entity Output Info",
 	author		= "Botox, Addie, Dolly, .Rushaway",
 	description	= "Advanced entity output manipulation API",
-	version		= "1.2.1",
+	version		= "1.2.2",
 	url			= "https://github.com/srcdslab"
 };
 
@@ -658,7 +658,7 @@ int FindOutput(int entity, const char[] output, int startIndex, const char[] tar
 
 		if (target[0])
 		{
-			Address m_iTarget = oldActionList + m_iTarget_offset;
+			Address m_iTarget = LoadFromAddress(oldActionList + m_iTarget_offset, NumberType_Int32);
 
 			char thisTarget[64];
 			StringtToCharArray(m_iTarget, thisTarget, sizeof(thisTarget), true);
@@ -669,7 +669,7 @@ int FindOutput(int entity, const char[] output, int startIndex, const char[] tar
 
 		if (targetInput[0])
 		{
-			Address m_iTargetInput = oldActionList + m_iTargetInput_offset;
+			Address m_iTargetInput = LoadFromAddress(oldActionList + m_iTargetInput_offset, NumberType_Int32);
 
 			char thisTargetInput[64];
 			StringtToCharArray(m_iTargetInput, thisTargetInput, sizeof(thisTargetInput), true);
@@ -680,7 +680,7 @@ int FindOutput(int entity, const char[] output, int startIndex, const char[] tar
 
 		if (parameter[0])
 		{
-			Address m_iParameter = oldActionList + m_iParameter_offset;
+			Address m_iParameter = LoadFromAddress(oldActionList + m_iParameter_offset, NumberType_Int32);
 
 			char thisParameter[256];
 			StringtToCharArray(m_iParameter, thisParameter, sizeof(thisParameter), true);
